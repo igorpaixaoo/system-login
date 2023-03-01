@@ -1,0 +1,106 @@
+.esqueceu-senha{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow:  35px 35px 70px #9f9f9f,
+              -35px -35px 70px #ffffff;
+  padding: 70px;
+  transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.esqueceu-senha:hover{
+  border-radius: 40px;
+}
+
+#email-query, #senha-query{
+  width: 260px;
+  height: 20px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 13pt;
+  transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: transparent;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+
+#email-query:hover, #senha-query:hover{
+  border-radius: 10px;
+}
+
+#email-query:focus, #senha-query:focus{
+  transition: none;
+  border-color: red;
+  border-radius: 10px;
+}
+
+.esqueceu-senha p{
+  font-size: 10pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cta {
+  border: none;
+  background: none;
+  margin-top: 20px;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 20px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  cursor: pointer;
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.cta a{
+  text-decoration: none;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
