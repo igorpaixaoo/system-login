@@ -5,22 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../styles/GlobalStyle.css">
+    <link rel="stylesheet" href="../styles/Register.css">
 </head>
 <body>
     <div class="register">
+        <h2>Sign up to System</h2>
         <form id="form">
-            <label>Email</label>
-            <input type="email" id="email" required>
-            <label>Senha</label>
-            <input type="password" id="password" required>
-            <label>Nome:</label>
-            <input type="text" id="nome" required>
-            <label>Sobrenome:</label>
-            <input type="text" id="sobrenome">
-            <label>Endereço:</label>
-            <textarea id="endereco" required></textarea>
-            <button type="submit" id="btnEntrar" onclick="apiRegister()">Entrar</button>         
+            <div class="email-form">
+                <label>Email</label>
+                <div>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+            <div class="password-form">
+                <label>Password</label>
+                <div>
+                    <input type="password" id="password" required>
+                </div>
+            </div>
+            <div class="name-form">
+                <label>Name</label>
+                <div>
+                    <input type="text" id="nome" required>
+                </div>
+            </div>
+            <div class="sobrenome-form">
+                <label>Sobrenome</label>
+                <div>
+                    <input type="text" id="sobrenome">
+                </div>
+            </div>
+            <div class="address-form">
+                <label>Address</label>
+                <div>
+                    <input id="address" maxlength="100%" required></input>
+                </div>
+            </div>
+            <button type="submit" id="btnCreate" onclick="apiRegister()">Create account</button>         
         </form>
+        <div class="erroUser" id="erroUser" style="display: none;">
+            <p>Usuário já existente!</p>
+        </div>
     </div>
 
     <script src="../scripts/Register.js"></script>
