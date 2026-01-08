@@ -6,7 +6,8 @@ document.getElementById("form").addEventListener("submit", function (e) {
 const dadosString = localStorage.getItem("Dados");
 const dados = JSON.parse(dadosString);
 
-const url = "http://localhost:8080/user/create"
+const urlPost = "http://localhost:8080/user/create"
+const urlUsers = "http://localhost:8080/user/users"
 
 async function apiRegister() {
 
@@ -17,31 +18,32 @@ async function apiRegister() {
     var endereco = document.getElementById('address').value
     const userError = document.getElementById('erroUser')
 
-    if(email != dados.email || password != dados.senha){
-        const post = await fetch(url, {
-            method: "POST", 
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email: email,
-                senha: password,
-                nome: nome,
-                sobrenome: sobrenome,
-                endereco: endereco
-            })
-
+    const post = await fetch(urlPost, {
+        method: "POST", 
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: email,
+            senha: password,
+            nome: nome,
+            sobrenome: sobrenome,
+            endereco: endereco
         })
 
-        const result = await post.json()
-        console.log(result)
+    })
 
-        userError.style.display = 'none'
-
-        window.location.href = "../pages/login.html"       
-    }else{
+    if(post.ok){
+        window.location.href = "../pages/login.html" 
+    }else {
         userError.style.display = 'block'
-    } 
+    }
+
+
+
+          
+    
+    
     
 
 

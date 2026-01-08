@@ -60,3 +60,6 @@ h2{
     background-color: rgb(114, 192, 95);
 }
 
+.erroUser p{
+    color: red;
+}
